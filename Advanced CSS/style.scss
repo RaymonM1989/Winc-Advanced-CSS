@@ -1,0 +1,16 @@
+/* (Basic) Reset of pre-set margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Import other SCSS files */
+@import "variables";
+@import "testimonial";
+@import "portfolio";
+@import "socialmedia";
+@import "mediaqueries";
+
+body {
+  background-color: #c3cfe2;
+}

@@ -1,0 +1,68 @@
+.socialmedia-container {
+  width: 260px;
+
+  /* Create a grid with 1 column and 5 rows */
+  display: grid;
+  grid-template-columns: 260px;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+
+  /* Anchor the container to the bottom-right of the screen; The part with the links is offscreen. */
+  position: fixed;
+  right: -200px;
+  bottom: 50px;
+
+  .socialmedia-button {
+    /* Create a grid (in each grid cell from the container) with once cell for the icon and one for the link */
+    display: grid;
+    grid-template-columns: 60px 200px;
+    place-items: center;
+
+    transition-property: transform;
+    transition-duration: $SocialMediaTransitionTime;
+
+    /* When hovering over a socialmedia-button it moves to the left (so the whole button is onscreen, and the link is accessible) */
+    &:hover {
+      transform: translateX(-200px);
+    }
+
+    /* Set the size of the icons and invert them from black to white images */
+    .socialmedia-icon {
+      width: 30px;
+      height: 30px;
+      filter: invert(1);
+    }
+
+    &:first-child {
+      background-color: #e17b77;
+    }
+
+    &:nth-child(2) {
+      background-color: #00aced;
+    }
+
+    &:nth-child(3) {
+      background-color: #007bb6;
+    }
+
+    &:nth-child(4) {
+      background-color: #3b5998;
+    }
+
+    &:last-child {
+      background-color: #333;
+    }
+
+    .socialmedia-link {
+      color: white;
+      font-size: 16px;
+      font-family: "Helvetica", "Tahoma", "Trebuchet MS", "Verdana", "Arial",
+        sans-serif;
+      font-weight: bold;
+
+      /* Keep the color from changing to blue after the link has been clicked */
+      &:visited {
+        color: white;
+      }
+    }
+  }
+}

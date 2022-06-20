@@ -1,0 +1,83 @@
+/* I know the assignment said nothing about making the testimonial responsive, but I tried my best to achieve it anyhow. Therefore, my code might be a bit clunkier than you're used to. */
+
+.testimonial-container {
+  margin: 15px auto;
+
+  .testimonial {
+    background-color: white;
+    /* Center the testimonial in the middle of the screen */
+    margin: 0px auto;
+    box-sizing: border-box;
+
+    /* Set the size of the testimonial te responsive (by using 'vw' as indicator for the width and height. This will ensure the aspect ratio (Sadly this doesn't work on fonts and most other things, like box-shadow, yet)) */
+    width: 75vw;
+    height: 100vw;
+
+    /* Limit the function of the 'vw' scaling (so the testimonial doesn't become too small or too big) */
+    min-width: 390px;
+    max-width: 650px;
+    min-height: 510px;
+    max-height: 850px;
+
+    border-radius: 4%;
+    overflow: hidden;
+
+    box-shadow: 0px 10px 15px grey;
+
+    p {
+      /* Make the size of the textbox reactive, while keeping the aspect-ratio */
+      padding: 8% 8%;
+      box-sizing: border-box;
+      height: 66%;
+      background-color: white;
+
+      /* Font specifics. Font size is handled in the mediaqueries */
+      font-family: "Helvetica", "Tahoma", "Trebuchet MS", "Verdana", "Arial",
+        sans-serif;
+      text-align: left;
+      color: rgb(90, 90, 90);
+    }
+
+    footer {
+      height: 34%;
+      background-color: #686de0;
+
+      text-align: center;
+
+      img {
+        /* Make Avatar image size and position responsive */
+        width: 33%;
+        position: relative;
+        top: -40%;
+
+        border-radius: 100%;
+
+        /* Sadly, this border is either a constant (so not responsive) or grows (and shrinks) after the actual image stops scaling, since there's no 'min' or 'max' attribute */
+        border: 1vw solid white;
+      }
+
+      h1 {
+        position: relative;
+        top: -32%;
+
+        /* Font specifics. Font size is handled in the mediaqueries */
+        font-family: "Helvetica", "Tahoma", "Trebuchet MS", "Verdana", "Arial",
+          sans-serif;
+        color: white;
+
+        /* Given that (should this become an actual testimonial) people would probably type their name with just a capital letter (in the form that handles testimonials), this function makes it all Caps, for consistency */
+        text-transform: uppercase;
+      }
+
+      h2 {
+        position: relative;
+        top: -25%;
+
+        /* Font specifics. Font size is handled in the mediaqueries */
+        font-family: "Helvetica", "Tahoma", "Trebuchet MS", "Verdana", "Arial",
+          sans-serif;
+        color: #adafe9;
+      }
+    }
+  }
+}

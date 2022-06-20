@@ -1,0 +1,9 @@
+$portfolioTransitionTime: 250ms;
+$SocialMediaTransitionTime: 400ms;
+
+/* Mixin for controling font behaviour. The properties are multiplied by unitized values, to ensure the correct units. */
+@mixin fontSize($size, $lineHeight, $letterSpacing) {
+  font-size: $size * 1px;
+  line-height: $lineHeight * 1em;
+  letter-spacing: $letterSpacing * 1em;
+}

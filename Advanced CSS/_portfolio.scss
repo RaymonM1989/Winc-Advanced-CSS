@@ -1,0 +1,54 @@
+.portfolio-container {
+  margin: 100px 50px;
+
+  /* Grid is created here, Column layout is handled in the mediaqueries */
+  display: grid;
+
+  .portfolio-item {
+    background-color: #222c3d;
+
+    margin: 15px;
+    box-sizing: border-box;
+    border-radius: 6%;
+    overflow: hidden;
+
+    /* Position is set to relative, so '.portfolio-button' (child) can be centered with 'position: absolute' */
+    position: relative;
+
+    /* When hovering over the portfolio-item: scale the image while lowering the opacity */
+    &:hover .portfolio-image {
+      transform: scaleX(1.1) scaleY(1.1);
+      opacity: 0;
+    }
+
+    /* When hovering over the portfolio-item: Make the button visible by increasing the opacity */
+    &:hover .portfolio-button {
+      opacity: 1;
+    }
+  }
+
+  .portfolio-image {
+    width: 100%;
+    height: 100%;
+
+    transition-property: opacity, transform;
+    transition-duration: $portfolioTransitionTime;
+  }
+
+  .portfolio-button {
+    width: 30%;
+    height: 10%;
+
+    /* Place button in the middle of the portfolio-item */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Hide button on load */
+    opacity: 0;
+
+    transition-property: opacity;
+    transition-duration: $portfolioTransitionTime;
+  }
+}
